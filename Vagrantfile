@@ -13,5 +13,7 @@ Vagrant.configure("2") do |config|
       rm -rf /var/www/html
       ln -fs /vagrant/code /var/www/html
       cp /vagrant/php.ini /etc/php/7.4/apache2/php.ini
+      curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php
+      sudo php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=composer
     SHELL
   end
